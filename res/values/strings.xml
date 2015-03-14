@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">便民取款钱包</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="username_hint">账号</string>
+	<string name="passwd_hint">密码</string>
+	<string name="imageButton_login_desc">登陆按钮</string>
+	
+</resources>
