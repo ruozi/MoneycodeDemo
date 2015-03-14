@@ -66,6 +66,8 @@
                 android:text="@string/commit" /> 
             <Button 
                 style="?android:attr/buttonBarButtonStyle"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/button_take_photo"
                 android:layout_weight="1.0"
                 android:layout_width="wrap_content"  
@@ -76,6 +78,8 @@
                 android:text="@string/take_photo" />
             <Button  
                 style="?android:attr/buttonBarButtonStyle"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/button_confirm"
                 android:layout_weight="1.0"
                 android:layout_width="wrap_content"  
