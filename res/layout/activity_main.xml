@@ -20,6 +20,7 @@
         android:layout_marginTop="230dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/editText_passwd"
+        android:inputType="textPassword"
         android:hint="@string/passwd_hint"
         android:textColorHint="@color/gray"
         android:layout_width="245dp"

@@ -1,6 +1,7 @@
 package com.example.moneycodedemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +21,11 @@ public class MainActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					Log.d(TAG,"Click!");									
+					Log.d(TAG,"Click!");	
+					
+					Intent intent = new Intent();
+					intent.setClass(MainActivity.this, OcrActivity.class);
+					startActivity(intent);
 
 				}
 	        	}
