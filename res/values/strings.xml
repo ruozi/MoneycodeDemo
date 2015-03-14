@@ -17,7 +17,8 @@
     <string name="title_activity_result">ResultActivity</string>
     <string name="cancel">取消交易</string>
     <string name="pay">确认交易</string>
-    <string name="ocr_result_default">HC12345678</string>
+    <string name="ocr_result_default"></string>
     <string name="ocr_number_default">交易金额：1000.00元</string>
+    <string name="title_activity_algodebug">AlgodebugActivity</string>
 
 </resources>

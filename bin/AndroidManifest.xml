@@ -46,6 +46,10 @@
             android:label="@string/title_activity_result"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        <activity
+            android:name=".AlgodebugActivity"
+            android:label="@string/title_activity_algodebug" >
+        </activity>
     </application>
 
 </manifest>

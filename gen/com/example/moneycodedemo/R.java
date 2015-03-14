@@ -498,30 +498,34 @@ containing a value of this type.
         public static final int selector_take_photo=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000f;
+        public static final int action_settings=0x7f090011;
         public static final int any=0x7f090000;
         public static final int back=0x7f090001;
-        public static final int button_commit=0x7f09000a;
-        public static final int button_confirm=0x7f09000c;
-        public static final int button_take_photo=0x7f09000b;
-        public static final int editText_passwd=0x7f090004;
-        public static final int editText_username=0x7f090003;
-        public static final int frame_layout=0x7f090006;
+        public static final int button_commit=0x7f09000c;
+        public static final int button_confirm=0x7f09000e;
+        public static final int button_take_photo=0x7f09000d;
+        public static final int codeimage=0x7f090003;
+        public static final int editText_passwd=0x7f090006;
+        public static final int editText_username=0x7f090005;
+        public static final int frame_layout=0x7f090008;
         public static final int front=0x7f090002;
-        public static final int imageButton_login=0x7f090005;
-        public static final int image_view=0x7f090007;
-        public static final int ocr_order=0x7f090008;
-        public static final int ocr_result=0x7f090009;
-        public static final int textView_ocr_number=0x7f09000e;
-        public static final int textView_ocr_result=0x7f09000d;
+        public static final int imageButton_login=0x7f090007;
+        public static final int image_view=0x7f090009;
+        public static final int ocr_order=0x7f09000a;
+        public static final int ocr_result=0x7f09000b;
+        public static final int textView=0x7f090004;
+        public static final int textView_ocr_number=0x7f090010;
+        public static final int textView_ocr_result=0x7f09000f;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_ocr=0x7f030001;
-        public static final int activity_result=0x7f030002;
+        public static final int activity_algodebug=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_ocr=0x7f030002;
+        public static final int activity_result=0x7f030003;
     }
     public static final class menu {
-        public static final int ocr=0x7f080000;
+        public static final int algodebug=0x7f080000;
+        public static final int ocr=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060006;
@@ -539,6 +543,7 @@ containing a value of this type.
         public static final int passwd_hint=0x7f060003;
         public static final int pay=0x7f06000f;
         public static final int take_photo=0x7f06000b;
+        public static final int title_activity_algodebug=0x7f060012;
         public static final int title_activity_ocr=0x7f060005;
         public static final int title_activity_result=0x7f06000d;
         public static final int username_hint=0x7f060002;

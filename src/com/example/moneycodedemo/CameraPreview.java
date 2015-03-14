@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -16,10 +17,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     public CameraPreview(Context context, Camera camera) { 
         super(context); 
         mCamera = camera; 
+        Log.d(TAG,"CameraPreviewInitial!!!!!!");
  
         // 安装一个SurfaceHolder.Callback，
         // 这样创建和销毁底层surface时能够获得通知。
         mHolder = getHolder(); 
+        mHolder.setKeepScreenOn(true);
+        this.setFocusable(true);
         mHolder.addCallback(this); 
     } 
  
@@ -27,8 +31,18 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         // surface已被创建，现在把预览画面的位置通知摄像头
     	Log.d(TAG,"SurfaceCreated!!!!!!");
         try { 
-            mCamera.setPreviewDisplay(holder); 
-            mCamera.startPreview(); 
+	        Parameters para=mCamera.getParameters();
+	        para.setFlashMode(Parameters.FLASH_MODE_OFF);     
+	        para.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+	        int height=para.getPreviewSize().height;
+	        int width=para.getPreviewSize().width;
+	        para.setPreviewSize(height, width);
+	        para.setPictureSize(height, width); 
+            mCamera.setParameters(para);
+            mCamera.setPreviewDisplay(holder);
+            mCamera.setDisplayOrientation(90); 
+            mCamera.startPreview();
+            mCamera.cancelAutoFocus();
         } catch (IOException e) { 
             Log.d(TAG, "Error setting camera preview: " + e.getMessage()); 
         } 
@@ -37,6 +51,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     public void surfaceDestroyed(SurfaceHolder holder) { 
         // 空代码。注意在activity中释放摄像头预览对象
     	Log.d(TAG,"SurfaceDestroyed!!!!!!");
+//    	mCamera.setPreviewCallback(null);
     	} 
  
     public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) { 
