@@ -5,6 +5,6 @@
     <string name="hello_world">Hello world!</string>
 	<string name="username_hint">账号</string>
 	<string name="passwd_hint">密码</string>
-	<string name="imageButton_login_desc">登陆按钮</string>
-	
+	<string name="button_login">登  陆</string>
+
 </resources>
