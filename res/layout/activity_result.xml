@@ -10,6 +10,7 @@
         android:id="@+id/textView_ocr_result"
         android:layout_width="180dp"
         android:layout_height="100dp"
+        android:textColor="@color/white"
         android:scrollbars="vertical" 
         android:text="@string/ocr_result_default" />
     
@@ -18,6 +19,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textView_ocr_number"
         android:layout_width="180dp"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="@string/ocr_number_default" />
     
