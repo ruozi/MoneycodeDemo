@@ -69,6 +69,12 @@ public class OcrActivity extends Activity {
 		// Get Myapp
 		app = ((MyApp)getApplicationContext());
 		
+		
+		// Add Camera Preview to FrameLayout
+		mCameraPreview = new CameraPreview(this); 
+		FrameLayout preview = (FrameLayout) findViewById(R.id.frame_layout); 
+		preview.addView(mCameraPreview);
+		
 		// Get order&text
 		tv_order=(TextView)findViewById(R.id.ocr_order);
 		et_result=(EditText)findViewById(R.id.ocr_result);
@@ -133,21 +139,34 @@ public class OcrActivity extends Activity {
 		
 		// ´´½¨CameraÊµÀý 
 		mCamera = getCameraInstance();
-		Log.d(TAG,"mCamera get!");
-		
-		// Add Camera Preview to FrameLayout
-		mCameraPreview = new CameraPreview(this, mCamera); 
-		FrameLayout preview = (FrameLayout) findViewById(R.id.frame_layout); 
-		preview.addView(mCameraPreview);
+		if(mCamera!=null){
+			Log.d(TAG,"mCamera get!");
+			mCameraPreview.setCamera(mCamera);
+		}
+		else {
+			Log.d(TAG,"mCamera NULL!£¡£¡£¡£¡£¡£¡");
+		}
+
 	}
 		
 	@Override
 	protected void onPause(){
-		Log.i(TAG,"onPause");
-		super.onPause();	
-		mCamera.release();
-		mCamera=null;
+		Log.i(TAG,"onPause --> Realease camera");
+		super.onPause();
+		if(null!=mCamera){
+			mCameraPreview.setCamera(null);
+			mCamera.setPreviewCallback(null) ;
+			mCamera.stopPreview();
+			mCamera.release();
+			mCamera=null;
+		}
 	}
+	
+	@Override
+	protected void onStop(){
+		Log.i(TAG,"onStop");
+		super.onStop();
+		}
 
 	private PictureCallback mPicture = new PictureCallback() { 
 		 
